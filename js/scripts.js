@@ -10,6 +10,8 @@ let pokemonRepository = (function () {
     return {
         add: function (pokemon) {
             pokemonList.push(pokemon);
+            // if (typeof pokemon === 'object');
+            
         },
         getAll: function () {
             return pokemonList;
@@ -17,12 +19,19 @@ let pokemonRepository = (function () {
     }
 })();
 
-
 pokemonRepository.getAll().forEach(pokemon => document.write ('<p>' + pokemon.name + " " + "is" + " " + pokemon.height + "m" ));
+
+
+
+
+
+// const result = pokemonRepository.getAll().filter((word) => word.check === "grass");
+
+// document.write(result);
+
+
    
     
-
-
 
 // for (let i = 0; i < pokemonList.length; i++) {
 //     let pokemon = pokemonList[i];
@@ -43,8 +52,6 @@ pokemonRepository.getAll().forEach(pokemon => document.write ('<p>' + pokemon.na
 // }
 
  
-
-
 
 
 // function divide (dividend, divisor){
