@@ -6,11 +6,37 @@ let pokemonList = [
     { name: "Charmander", height: 0.6, type: "fire" }
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-    let pokemon = pokemonList[i];
-        document.write ('<p>' + pokemon.name + ' (height: '+ pokemon.height +')');
-    if (pokemon.height > 1.7) {
-        document.write ('<strong> - Wow, that is huge!');
-    }
-}
+// for (let i = 0; i < pokemonList.length; i++) {
+//     let pokemon = pokemonList[i];
+//         document.write ('<p>' + pokemon.name + ' (height: '+ pokemon.height +')');
+//     if (pokemon.height > 1.7) {
+//         document.write ('<strong> - Wow, that is huge! </strong>');
+//     }
+// }
+
+// pokemonList.forEach(function(pokemon) {
+//     document.write ('<p>' + pokemon.name + " " + "is" + " " + pokemon.height + "m" );
+
+// })
+
+// function PokemonLop(pokemon) {
+//     document.write ('<p>' + pokemon.name + " " + "is" + " " + pokemon.height + "m" );
+
+// }
+
+pokemonList.forEach(pokemon => document.write ('<p>' + pokemon.name + " " + "is" + " " + pokemon.height + "m" )); 
+
+
+
+
+// function divide (dividend, divisor){
+//     if (divisor === 0){
+//         return "You're trying to divide by zero."
+//     }else{
+//         let result = dividend / divisor;
+//         return result;   
+//     }
+//     document.write(divide(4,2));
+// }
+
 
