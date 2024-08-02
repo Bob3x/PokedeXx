@@ -24,16 +24,24 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
    
-
     function addListItem(pokemon){
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('Pokemon-button');
+    button.classList.add('pokemon-button');
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+    
+    button.addEventListener('click', function() {
+        showDetails(pokemon)
+    });
     }
+
+    function showDetails(pokemon){
+        console.log(pokemon.name);
+    }
+
     return {
         add: add,
         getAll: getAll,
