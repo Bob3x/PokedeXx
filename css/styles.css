@@ -2,8 +2,32 @@
 
 body {
     background-color: lightblue;
+    font-family: "Roboto", "Poppins";
+}
+h1 {
+ font-family: "Roboto";
+ font-size: 24px;
+ font-weight: 700;
+ color: white;
+}
+
+ul{
+    list-style: none;
 }
 
 .pokemon-button {
-    background-color: grey;
+    background-color: rgb(255, 162, 75);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Poppins";
+    font-size: 16px;
+    color: rgb(155, 79, 255);
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: none;
 }
