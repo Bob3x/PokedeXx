@@ -7,28 +7,43 @@ let pokemonRepository = (function () {
     { name: "Charmander", height: 0.6, type: "fire" }
     ];
 
-    return {
-        add: function (pokemon) {
+    function add(pokemon) {
+        if (
+            typeof pokemon === "object" && 
+            "name" in pokemon && 
+            "height" in pokemon && 
+            "type" in pokemon
+        ){
             pokemonList.push(pokemon);
-            // if (typeof pokemon === 'object');
-            
-        },
-        getAll: function () {
-            return pokemonList;
+        }else {
+            console.log("pokemon is not correct");
         }
     }
+
+    function getAll() {
+        return pokemonList;
+    }
+   
+
+    function addListItem(pokemon){
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('Pokemon-button');
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    }
+    return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem 
+    };
 })();
 
-pokemonRepository.getAll().forEach(pokemon => 
-    let pokemon-list = document.querySelector('.pokemon-list');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = 'Pokemon-name';
-    button.classList.add('Pokemon-button')
-    pokemon-list.appendChild(li);
-    li.appendChild(button);
-
-    );
+pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+});
 
 
 
