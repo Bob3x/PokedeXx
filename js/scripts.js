@@ -19,7 +19,16 @@ let pokemonRepository = (function () {
     }
 })();
 
-pokemonRepository.getAll().forEach(pokemon => document.write ('<p>' + pokemon.name + " " + "is" + " " + pokemon.height + "m" ));
+pokemonRepository.getAll().forEach(pokemon => 
+    let pokemon-list = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = 'Pokemon-name';
+    button.classList.add('Pokemon-button')
+    pokemon-list.appendChild(li);
+    li.appendChild(button);
+
+    );
 
 
 
