@@ -32,8 +32,10 @@ let pokemonRepository = (function () {
     });
     }
 
-    function showDetails(pokemon){
-        console.log(pokemon.name);
+    function showDetails(item){
+        pokemonRepository.loadDetails(item).then(function () {
+        console.log(item);
+        });
     }
 
     function loadList() {
@@ -52,11 +54,26 @@ let pokemonRepository = (function () {
         });
     }
 
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (responce) {
+            return responce.json();
+        }).then(function (details) {
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
+        }).catch(function (e) {
+            console.error(e);
+        });
+    }
+
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        loadList: loadList
+        loadList: loadList,
+        loadDetails: loadDetails,
+        showDetails: showDetails
     };
 })();
 
