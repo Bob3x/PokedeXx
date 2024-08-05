@@ -2,6 +2,13 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+    var img = document.createElement("img1");
+
+    img.src = "https://images.app.goo.gl/w4ntWaknWRrtMYmU6";
+    var src = ducument.getElementById("img-logo");
+
+    src.appendChild(img);
+
     function add(pokemon) {
         if (
             typeof pokemon === "object" && 
@@ -17,19 +24,19 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
-   
-    function addListItem(pokemon){
-    let pokemonList = document.querySelector('.pokemon-list');
-    let listpokemon = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
-    
-    button.addEventListener('click', function() {
-        showDetails(pokemon)
-    });
+
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listpokemon = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
+
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
     }
 
     function showDetails(item){
