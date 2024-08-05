@@ -5,6 +5,8 @@ body {
     font-family: "Roboto", "Poppins";
 }
 h1 {
+ display: flex;
+ align-content: center;
  font-family: "Roboto";
  font-size: 24px;
  font-weight: 700;
