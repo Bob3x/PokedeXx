@@ -161,9 +161,9 @@ let formValidation = (function() {
     
     emailInput.addEventListener("input", validateEmail);
     passwordInput.addEventListener("input", validatePassword);
-})()
+})();
 
-let modalShow = (function () {
+let modalShowHide = (function() {
 
     function showModal(tittle, text) {
         let modalContainer = document.querySelector("#modal-container");
@@ -172,9 +172,9 @@ let modalShow = (function () {
         let modal = document.createElement("div");
         modal.classList.add("modal");
 
-        ;et closeButtonElement = document.createElement("button");
+        let closeButtonElement = document.createElement("button");
         closeButtonElement.classList.add("modal-close");
-        closeButtonelement.innerText = "Cloase";
+        closeButtonElement.innerText = "Cloase";
 
         let tittleElement = document.createElement("h1");
         tittleElement.innerText = tittle;
@@ -193,9 +193,23 @@ let modalShow = (function () {
     document.querySelector("#show-modal").addEventListener("click", () => {
         showModal("Modal tittle", "This is the modal content!");
     });
+
+    function hideModal() {
+        modalContainer.classList.remove("is-visible");
+    }
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+            hideModal();
+        }
+    });
+
+    modalContainer.addEventListener("click", (e) => {
+        let target = e.target;
+        if (target === modalContainer) {
+        hideModal();
+        }
+    });
 })();
-
-
 
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function (pokemon) {
