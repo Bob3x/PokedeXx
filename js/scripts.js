@@ -2,12 +2,10 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    var img = document.createElement("img1");
-
-    img.src = "https://images.app.goo.gl/w4ntWaknWRrtMYmU6";
-    var src = ducument.getElementById("img-logo");
-
-    src.appendChild(img);
+    // let img = document.createElement("img");
+    // img.src = "https://images.app.goo.gl/w4ntWaknWRrtMYmU6";
+    // let src = ducument.getElementById("img");
+    // src.appendChild(img); - Adding img but document is not difined ?
 
     function add(pokemon) {
         if (
@@ -45,7 +43,7 @@ let pokemonRepository = (function () {
         });
     }
 
-    function loadList() {
+    function loadList() { // load list function with promise
         return fetch(apiUrl).then(function (responce) {
             return responce.json();
         }).then(function (json) {
@@ -61,7 +59,7 @@ let pokemonRepository = (function () {
         });
     }
 
-    function loadDetails(item) {
+    function loadDetails(item) {     // load details function with promise
         let url = item.detailsUrl;
         return fetch(url).then(function (responce) {
             return responce.json();
