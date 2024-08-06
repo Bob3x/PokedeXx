@@ -5,8 +5,8 @@ body {
     font-family: "Roboto", "Poppins";
 }
 h1 {
- display: inline;
- align-content: center;
+ display: grid;
+ justify-items: center;
  font-family: "Roboto";
  font-size: 24px;
  font-weight: 700;
@@ -14,6 +14,8 @@ h1 {
 }
 
 ul{
+    display: grid;
+    grid-template-columns: auto;
     list-style: none;
 }
 
