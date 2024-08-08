@@ -8,26 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
     <title>Pokedex</title>
+    
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
     <h1>PokedeX</h1>
-    <div id="img"></div>
     <ul class="pokemon-list"></ul>
-    <form id="register-form">
-        <div class="input-wrapper">
-            <label for="email">E-mail</label>
-            <input id="email">
-        </div>
-        <div clas="input-wrapper">
-            <label for="password">Password</label>
-            <input id="password" type="password">
-        </div>
-        <button>Register</button>
-    </form>
+    <!-- <button id="show-modal">Show modal</button> -->
+    <div id="modal-container"></div>
+    <script src="js/promise-polyfill.js"></script>
+    <!-- <script src="js/fetch-polyfill.js"></script> -->
+    <script src="js/scripts.js"></script>
 </body>
-<script src="js/promise-polyfill.js"></script>
-<script src="js/fetch-polyfill.js"></script>
-<script src="js/scripts.js"></script>
 </html>
