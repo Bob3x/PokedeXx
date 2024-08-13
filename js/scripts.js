@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=25';
-    let modalContainer = document.querySelector("#modal-container");
+    // let modalContainer = document.querySelector("#modal-container");
 
     function add(pokemon) {
         if (
@@ -36,7 +36,7 @@ let pokemonRepository = (function () {
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() {
-            showModal( 
+            showModal(
                 pokemon.name, "height: " + pokemon.height, pokemon.imageUrl 
             );
         console.log(pokemon);
@@ -73,15 +73,45 @@ let pokemonRepository = (function () {
         });
     }
 
-    $('#exampleModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-title').text('New message to ' + recipient)
-        modal.find('.modal-body input').val(recipient)
-      })
+    function showModal(item) {
+        let modalBody = $('.modal-body');
+        let modalTitle = $('.modal-title');
+        let modalHeader = $('.modal-header');
+
+        modalTitle.empty();
+        modalHeader.empty();
+
+        let nameElement = $('<h1>' + item.name + '</h1>');
+        
+        let imageElementFront = $('<img class="modal-img" style="width:50%">');
+        imageElementFront.attr('src', item.imageUrlFront);
+        // let imageElementBack = $('<img class="modal-img" style="width:50%">');
+        // imageElementBack.attr('src', item.imageUrlBack);
+
+        let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
+
+        // let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
+
+        modalTitle.append(nameElement);
+        modalBody.append(imageElementFront);
+        modalBody.append(heightElement);
+        modalBody.append(typesElement);
+
+
+
+    }
+
+    $('[data-toggle="modal"]').on('click', function(){
+        let targetSelector = $(this).attr('data-target');
+        $(targetSelector).modal('show'); // Bootstrap’s own function to make the modal appear
+      });
+
+    //   $('[data-dismiss="modal"]').on('click', function(){
+    //     let targetSelector = $(this).attr('data-target');
+    //     $(targetSelector).modal('hide'); // Bootstrap’s own function to make the modal appear
+    //   });
+
+
 
     // function showModal(title, text, img) {
         
