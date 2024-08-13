@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
- display: flex;
+ display: grid;
  justify-content: center;
  margin-right: -35px;
  font-family: "Roboto";
@@ -16,21 +16,25 @@ h1 {
 
 }
 
-ul {
+ .list-group {
     list-style: none;
     display: grid;
     gap: 2px;
     justify-content: center;
 }
 
-.pokemon-button:hover {
-    cursor: pointer;
-    opacity: 0.75;
+.modal-header {
+    display: none;
 }
 
-.pokemon-button {
-    background-color: rgb(255, 145, 41);
-    border: none;
+/* .pokemon-button:hover {
+    cursor: pointer;
+    opacity: 0.75;
+} */
+
+/* /* .btn-primary {
+    /* background-color: rgb(255, 145, 41); */
+    /* border: none;
     border-radius: 6px;
     padding: 10px 24px;
     margin: 4px 2px;
@@ -40,25 +44,10 @@ ul {
     font-family: "Poppins";
     font-size: 16px;
     color: rgb(134, 42, 253);
-    transition-duration: 0.1s;   
-}
+    transition-duration: 0.1s;    */
 
 
-/* .intput-wrapper {
-    margin-bottom: 10px;
-}
-
-label {
-    display: inline-block;
-    min-width: 75px;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.8em;
-} */
-
-#modal-container {
+/* #modal-container {
     display: none;
 }
 
@@ -72,12 +61,12 @@ label {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999; /* showing it above other content */
-    overflow: auto; /*allowing scrolling if the screen is not high enough*/
-    display: grid; /*centering the modal*/
+    /* overflow: auto; allowing scrolling if the screen is not high enough */
+    /* display: grid; centering the modal */
     
-}
 
-.modal {
+
+/* .modal {
     margin: auto;
     display: inline-block;
     background: rgb(255, 151, 54);
@@ -90,59 +79,56 @@ label {
     border-color: rgb(169, 103, 255);
     border-width: 4px;
 
-}
+} */
 
-.modal-close {
+/* .modal-close {
     float: right;
     border: 0;
     background: none;
     color: #ffffff;
     text-decoration: underline;
     cursor: pointer;   
-}
+} */
 
-.modal h1 {
-    padding-left: 45px;
-    font-size: 16px;
+ .modal-title {
+    font-size: 24;
     font-weight: 500;
-    color: black;
-    text-align: center;
+    text-align: left;
     margin-top: 0;
 }
 
-.modal p {
-    font-size: 14px;
+.pokemon-details {
+    font-size: 16px;
     font-weight: 400;
     margin-bottom: 5px;
-    text-align: center;
-} 
+    text-align: left;
+}
+
+/* .modal img {
+    max-width: 100%;
+    height: auto;
+} */
 
 @media all and (max-width: 767px) {
     h1 {
         font-size: 22px;
     }
-    .modal h1 {
+    /* .modal h1 {
         font-size: 12px;
     }
     .modal p {
         font-size: 11px;
-    }
-    .modal img{
-        max-width: 100%;
-        height: auto;
-    }
+    } */
 }
 
 @media all and (min-width: 767px) and (max-width: 1119px){
     h1 {
         font-size: 32px;
     }
-    .modal h1 {
+    /* .modal h1 {
         font-size: 16px;
     }
     .modal p {
         font-size: 14px;
-    }
-
-
-}
+    } */
+} 
