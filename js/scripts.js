@@ -21,23 +21,35 @@ let pokemonRepository = (function () {
 
     function addListItem(pokemon) {
         let pokemonList = document.querySelector('.list-group');
-        let listpokemon = document.createElement('li');
-        listpokemon.classList.add('list-group-item');
-        let button = document.createElement('button');
-        button.innerText = pokemon.name;
-        button.classList.add('btn-primary');
-        listpokemon.appendChild(button);
-        pokemonList.appendChild(listpokemon);
+        let pokemonListItem = document.createElement('li');
+        // pokemonListItem.classList.add('list-group-item-active');
 
-        button.addEventListener('click', function() {
-            showDetails(pokemon)
+        let pokemonButton = document.createElement('button');
+        pokemonButton.classList.add('btn', 'btn-primary');
+        pokemonButton.setAttribute('data-toggle', 'modal');
+        pokemonButton.setAttribute('data-target','#pokemonModal');
+
+        pokemonButton.innerText = pokemon.name;
+        pokemonList.appendChild(pokemonListItem);
+        pokemonListItem.appendChild(pokemonButton);
+
+        pokemonButton.addEventListener('click', function(){
+            showDetails(pokemon);
         });
+        
+        
+
+        // $('[data-toggle="modal"]').on('click', function() {
+        //     showDetails(pokemon)
+        //     let targetSelector = $(this).attr('data-target');
+        //     $(targetSelector).modal('show');
+        // });
     }
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() {
             showModal(
-                pokemon.name, "height: " + pokemon.height, pokemon.imageUrl 
+                pokemon.name, "height: " + pokemon.height + " types: " + pokemon.types, pokemon.imageUrl 
             );
         console.log(pokemon);
         });   
@@ -73,38 +85,40 @@ let pokemonRepository = (function () {
         });
     }
 
-    function showModal(item) {
-        let modalBody = $('.modal-body');
-        let modalTitle = $('.modal-title');
-        let modalHeader = $('.modal-header');
+    function showModal(title, text, imageUrl) {
+        let modalBody = document.querySelector('.modal-body');
+        let imageElement = document.querySelector('.modal-img');
+        let modalTitle = document.querySelector('.modal-title');
+        let modalDetails = document.querySelector('.pokemon-details');
 
-        modalTitle.empty();
-        modalHeader.empty();
+        // modalTitle.empty();
+        // modalHeader.empty();
 
-        let nameElement = $('<h1>' + item.name + '</h1>');
         
-        let imageElementFront = $('<img class="modal-img" style="width:50%">');
-        imageElementFront.attr('src', item.imageUrlFront);
+        modalTitle.innerText = title;
+        
+        
+        // let imageElement = $('<img class="modal-img" style="width:50%">');
+        imageElement.src = imageUrl; 
+        modalDetails.innerText = text;
         // let imageElementBack = $('<img class="modal-img" style="width:50%">');
         // imageElementBack.attr('src', item.imageUrlBack);
 
-        let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
+        // let heightElement = $('<p>' + 'height : ' + pokemon.height + '</p>');
+        // let typesElement = $('<p>' + 'types : ' + pokemon.types + '</p>');
+        modalBody.appendChild(modalDetails);
+        modalBody.appendChild(modalTitle);
+        modalBody.appendChild(imageElement);
+        modalTitle.appendChild(modalDetails);
 
-        // let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
-
-        modalTitle.append(nameElement);
-        modalBody.append(imageElementFront);
-        modalBody.append(heightElement);
-        modalBody.append(typesElement);
-
-
+    
 
     }
 
-    $('[data-toggle="modal"]').on('click', function(){
-        let targetSelector = $(this).attr('data-target');
-        $(targetSelector).modal('show'); // Bootstrap’s own function to make the modal appear
-      });
+    // $('[data-toggle="modal"]').on('click', function(){
+    //     let targetSelector = $(this).attr('data-target');
+    //     $(targetSelector).modal('show'); // Bootstrap’s own function to make the modal appear
+    //   });
 
     //   $('[data-dismiss="modal"]').on('click', function(){
     //     let targetSelector = $(this).attr('data-target');
