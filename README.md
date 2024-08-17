@@ -2,7 +2,7 @@ Project description
 
 - Simple JavaScript application "Pokedex" 
 
-- By clicking on one of the buttons modal is oppening with a picture of pokemon character
+- By clicking one of the buttons a modal is oppening with a picture of pokemon character
 
 How to get the project running
 
