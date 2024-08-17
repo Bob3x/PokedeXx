@@ -4,13 +4,13 @@ let pokemonRepository = (function () {
 
     function add(pokemon) {
         if (
-            typeof pokemon === "object" && 
-            "name" in pokemon && 
-            "detailsUrl" in pokemon 
+            typeof pokemon === 'object' && 
+            'name' in pokemon && 
+            'detailsUrl' in pokemon 
         ){
             pokemonList.push(pokemon);
         }else {
-            console.log("pokemon is not correct");
+            console.log('pokemon is not correct');
         }
     }
 
@@ -41,7 +41,7 @@ let pokemonRepository = (function () {
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() {
             showModal(
-                pokemon.name, "height: " + pokemon.height, pokemon.imageUrl 
+                pokemon.name, 'height: ' + pokemon.height, pokemon.imageUrl 
             );
         console.log(pokemon);
         });   
@@ -79,6 +79,7 @@ let pokemonRepository = (function () {
 
     function showModal(title, text, imageUrl) {     // modal function using bootstrap elements
         let modalBody = document.querySelector('.modal-body');
+        let modalHeader = document.querySelector('.modal-header');
         let imageElement = document.querySelector('.modal-img');
         let modalTitle = document.querySelector('.modal-title');
         let modalDetails = document.querySelector('.pokemon-details');
@@ -87,10 +88,11 @@ let pokemonRepository = (function () {
         imageElement.src = imageUrl; 
         modalDetails.innerText = text;
         
+        modalBody.appendChild(modalHeader);
         modalBody.appendChild(modalDetails);
-        modalBody.appendChild(modalTitle);
+        modalHeader.appendChild(modalTitle);
         modalBody.appendChild(imageElement);
-        modalTitle.appendChild(modalDetails);
+        
 
     }
      return {
