@@ -15,8 +15,16 @@ body {
     margin-top: 20px;
 }
 
+.bg-dark {
+    background-color: #636f7a;
+}
+
 .navbar-brand {
     font-size: medium;
+}
+
+.navbar-nav {
+    justify-content: end;
 }
 
 .col-sm {
@@ -80,6 +88,12 @@ body {
     opacity: 0.95;
 
 } */
+
+
+.modal-content {
+    border-radius: 1rem;
+}
+
 
 .modal-header {
     display: grid;
