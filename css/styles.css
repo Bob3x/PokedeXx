@@ -3,16 +3,16 @@
 body {
     background-color: lightblue;
     font-family: "Roboto", "Poppins";
+
 }
 
 .app-title {
     display: grid;
-    justify-items: center;
-    font-family: inherit;
+    justify-content: center;
     font-size: 32px;
     font-weight: 700;
     color: white;
-
+    margin-top: 20px;
 }
 
 .navbar-brand {
@@ -26,35 +26,73 @@ body {
 
 .list-group {
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
     gap: 2px;
+    margin-top: 20px;
+}
+    
+
+.btn {
+    background-color: rgb(255, 136, 0);
+    text-transform: uppercase;
+    border-color: rgb(255, 187, 0);
+    width: 200px;
+    border-width: 0.1px;
+    color:#cc00ff;
+    font-weight: 700;
+
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+    color:rgb(204, 0, 255);
+    background-color:#ff7b00;
+    border-color: rgb(255, 187, 0);
+    box-shadow: none;
 }
 
-.btn-primary {
+
+.btn:focus, .btn-primary:focus {
+    color:rgb(204, 0, 255);
+    background-color:#ff7b00;
+    border-color: rgb(255, 187, 0);
+    box-shadow: none;
+
+}
+
+.btn:hover, .btn-primary:hover {
+    color:rgb(204, 0, 255);
+    background-color:#ff7b00;
+    border-color: rgb(255, 187, 0);
+}
+
+
+/* .btn-primary-action {
     width: 200px;
     background-color: rgb(255, 145, 41);
     border-style: none;
     text-transform: uppercase;
-}
-
-.bnt-primary:active {
-    color: white;
 
 }
 
-.btn-primary:hover {
-    background-color: rgb(255, 145, 41);
+.btn-primary-action:hover {
+    background-color: rgb(224, 82, 0);
     border-style: none;
-    opacity: 0.75;
-}
+    opacity: 0.95;
+
+} */
 
 .modal-header {
     display: grid;
+    height: 50px;
+    
 
 }
 
 .modal-title {
-    text-align: left;
     text-transform: uppercase;
+    justify-self: left;
+    
+
 }
 
 
@@ -62,10 +100,13 @@ body {
     font-size: 16px;
     font-weight: 400;
     margin-top: 10px;
+    margin-left: 16px;
+    
 }
 
 .close {
-    text-align: right;
+    position: absolute;
+    justify-self: end;
 }
 
 
