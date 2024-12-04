@@ -3,28 +3,34 @@
 body {
     background-color: lightblue;
     font-family: "Roboto", "Poppins";
-
 }
 
-.app-title {
-    display: grid;
+.pokemon-logo {
+    display: flex;
     justify-content: center;
-    font-size: 32px;
-    font-weight: 700;
-    color: white;
-    margin-top: 20px;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem; /* Space between nav items */
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
 }
 
 .bg-dark {
     background-color: #636f7a;
-}
-
-.navbar-brand {
-    font-size: medium;
-}
-
-.navbar-nav {
-    justify-content: end;
 }
 
 .col-sm {
@@ -34,45 +40,50 @@ body {
 
 .list-group {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
     gap: 2px;
     margin-top: 20px;
 }
-    
+
+.btn-primary {
+    background-color: rgb(255, 136, 0) !important;
+    border-color: rgb(255, 187, 0) !important;
+    color: #cc00ff !important;
+}
 
 .btn {
     background-color: rgb(255, 136, 0);
     text-transform: uppercase;
     border-color: rgb(255, 187, 0);
-    width: 200px;
+    width: 250px; /* Increased from 200px */
+    min-height: 60px; /* Added minimum height */
     border-width: 0.1px;
-    color:#cc00ff;
+    color: #cc00ff;
     font-weight: 700;
-
+    padding: 15px; /* Added padding */
+    margin: 10px; /* Added margin */
+    transition: all 0.3s ease; /* Smooth transition for hover */
 }
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #ff7b00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .btn-primary:not(:disabled):not(.disabled):active {
-    color:rgb(204, 0, 255);
-    background-color:#ff7b00;
+    color: rgb(204, 0, 255);
+    background-color: #ff7b00;
     border-color: rgb(255, 187, 0);
-    box-shadow: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-.btn:focus, .btn-primary:focus {
-    color:rgb(204, 0, 255);
-    background-color:#ff7b00;
-    border-color: rgb(255, 187, 0);
-    box-shadow: none;
-
+.btn:focus,
+.btn-primary:focus {
+    background-color: #ff7b00 !important;
+    border-color: rgb(255, 187, 0) !important;
+    color: rgb(204, 0, 255);
+    box-shadow: 0 0 0 3px rgba(255, 136, 0, 0.3);
 }
-
-.btn:hover, .btn-primary:hover {
-    color:rgb(204, 0, 255);
-    background-color:#ff7b00;
-    border-color: rgb(255, 187, 0);
-}
-
 
 /* .btn-primary-action {
     width: 200px;
@@ -89,38 +100,28 @@ body {
 
 } */
 
-
 .modal-content {
     border-radius: 1rem;
 }
 
-
 .modal-header {
     display: grid;
     height: 50px;
-    
-
 }
 
 .modal-title {
     text-transform: uppercase;
     justify-self: left;
-    
-
 }
-
 
 .pokemon-details {
     font-size: 16px;
     font-weight: 400;
     margin-top: 10px;
     margin-left: 16px;
-    
 }
 
 .close {
     position: absolute;
     justify-self: end;
 }
-
-
