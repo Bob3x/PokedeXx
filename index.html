@@ -6,8 +6,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Lilita+One&&display=swap"
             rel="stylesheet" />
+        <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
         <script src="js/fetch-polyfill.js"></script>
         <script src="js/promise-polyfill.js"></script>
         <link
@@ -33,13 +34,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
-                        <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">
-                        </a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -48,8 +47,26 @@
             <div class="row">
                 <div class="col-sm">
                     <a class="pokemon-logo" href="/">
-                        <img src="assets/International_Pokémon_logo.svg.png" class="app-logo"
+                        <img classs="pokedex" src="assets/logo.svg"
                     /></a>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <select id="sortSelect" class="form-control w-auto">
+                                <option value="default">Default Order</option>
+                                <option value="aToZ">Name (A to Z)</option>
+                                <option value="zToA">Name (Z to A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input
+                                type="search"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="Search Pokemon" />
+                        </div>
+                    </div>
                     <div id="pokemon-list" class="row"></div>
                     <ul class="list-group"></ul>
                 </div>
@@ -60,7 +77,7 @@
             id="pokemonModal"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="exampleModalCenterTitle"
+            aria-labelledby="pokemonModalTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -69,15 +86,15 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <p class="pokemon-details"></p>
                     </div>
                     <div class="modal-body">
-                        <img src=" " class="modal-img" alt="pokemon-image" style="width: 100%" />
+                        <img src="" class="modal-img" alt="pokemon-image" style="width: 100%" />
+                        <div class="pokemon-details"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/scripts.js"></script>
+
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.js"
             integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
@@ -90,5 +107,6 @@
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
