@@ -38,7 +38,9 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal"
+                            >Contact</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -49,22 +51,25 @@
                     <a class="pokemon-logo" href="/">
                         <img classs="pokedex" src="assets/logo.svg"
                     /></a>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <select id="sortSelect" class="form-control w-auto">
-                                <option value="default">Default Order</option>
-                                <option value="aToZ">Name (A to Z)</option>
-                                <option value="zToA">Name (Z to A)</option>
-                            </select>
+                    <div class="input-container">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <select id="sortSelect" class="form-control w-auto">
+                                    <option value="default">Default Order</option>
+                                    <option value="random">Surprise Me!</option>
+                                    <option value="aToZ">Name (A to Z)</option>
+                                    <option value="zToA">Name (Z to A)</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <input
-                                type="search"
-                                class="form-control"
-                                id="searchInput"
-                                placeholder="Search Pokemon" />
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    id="searchInput"
+                                    placeholder="Search Pokemon" />
+                            </div>
                         </div>
                     </div>
                     <div id="pokemon-list" class="row"></div>
@@ -90,6 +95,22 @@
                     <div class="modal-body">
                         <img src="" class="modal-img" alt="pokemon-image" style="width: 100%" />
                         <div class="pokemon-details"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="contactModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Contact The Developer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>bob3xx@protonmail.com</p>
                     </div>
                 </div>
             </div>
