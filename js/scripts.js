@@ -3,19 +3,24 @@ let pokemonRepository = (function () {
     let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=50";
     let isLoading = false;
 
-    function sortPokemonList(sortType) {
-        let sortedList = [...getAll()];
+    function sortPokemonList() {
+        const sortBy = document.querySelector("#sortSelect").value;
+        let sortedList = [...pokemonList];
 
-        switch (sortType) {
+        switch (sortBy) {
             case "aToZ":
                 sortedList.sort((a, b) => a.name.localeCompare(b.name));
                 break;
             case "zToA":
                 sortedList.sort((a, b) => b.name.localeCompare(a.name));
                 break;
+            case "random":
+                sortedList.sort(() => Math.random() - 0.5);
+                break;
             default:
                 // Return original order from API
                 sortedList = [...pokemonList];
+                break;
         }
 
         // Clear and rebuild list
